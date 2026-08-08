@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KiranaBrain AI Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              kirana: {
+                50: '#f5f8ff',
+                500: '#2563eb',
+                600: '#1d4ed8',
+                700: '#1e3a8a',
+                900: '#132145'
+              }
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.35),_transparent_30%),linear-gradient(135deg,_#020617,_#111827)]">
+      <aside class="w-full border-b border-slate-800/70 bg-slate-950/80 glass lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 lg:border-b-0 lg:border-r">
+        <div class="flex h-full flex-col p-5 sm:p-6">
+          <div class="flex items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 px-3 py-3 shadow-lg shadow-slate-950/40">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 text-white">
+              <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6" aria-hidden="true">
+                <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.7" />
+                <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" />
+                <circle cx="16.5" cy="13.5" r="2" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.3em] text-slate-400">Store helper</p>
+              <h2 class="text-lg font-semibold text-white">KiranaBrain</h2>
+            </div>
+          </div>
+
+          <nav class="mt-8 space-y-2" aria-label="Main navigation">
+            <button data-view="dashboard" class="nav-btn flex w-full items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 px-4 py-3 text-left text-sm font-medium text-slate-300 transition hover:border-blue-500/60 hover:bg-slate-800/80">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-3v-6H8v6H5a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+              </svg>
+              <span>Home</span>
+            </button>
+            <button data-view="inventory" class="nav-btn flex w-full items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 px-4 py-3 text-left text-sm font-medium text-slate-300 transition hover:border-blue-500/60 hover:bg-slate-800/80">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <rect x="4" y="5" width="16" height="14" rx="2.5" stroke="currentColor" stroke-width="1.8" />
+                <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+              </svg>
+              <span>Stock</span>
+            </button>
+            <button data-view="ai" class="nav-btn flex w-full items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 px-4 py-3 text-left text-sm font-medium text-slate-300 transition hover:border-blue-500/60 hover:bg-slate-800/80">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M5 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                <path d="M8.5 10.5h.01M12 10.5h.01" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+              </svg>
+              <span>Ask</span>
+            </button>
+            <button data-view="order" class="nav-btn flex w-full items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 px-4 py-3 text-left text-sm font-medium text-slate-300 transition hover:border-blue-500/60 hover:bg-slate-800/80">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M5 6h14l-1.2 7.2a2 2 0 0 1-2 1.6H8.2a2 2 0 0 1-2-1.6L5 6Zm2 12a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Zm8 0a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+              </svg>
+              <span>Order</span>
+            </button>
+            <button data-view="orders" class="nav-btn flex w-full items-center gap-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 px-4 py-3 text-left text-sm font-medium text-slate-300 transition hover:border-blue-500/60 hover:bg-slate-800/80">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+                <path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 4h10M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <span>Orders</span>
+            </button>
+          </nav>
+
+          <div class="mt-8 rounded-3xl border border-cyan-500/20 bg-cyan-500/10 p-4 text-sm text-cyan-100">
+            <p class="font-semibold text-cyan-200">Ready to help your shop</p>
+            <p class="mt-2 leading-6 text-cyan-50/90">See low stock, check product quantity, and get easy order suggestions.</p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="px-4 py-4 sm:px-6 sm:py-6 lg:ml-72 lg:px-8 lg:py-8">
+        <header class="flex flex-col gap-4 rounded-[28px] border border-slate-800/70 bg-slate-900/70 p-4 shadow-2xl shadow-slate-950/40 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+          <div>
+            <p class="text-sm uppercase tracking-[0.35em] text-blue-300">Local shop helper</p>
+            <h1 class="mt-1 text-2xl font-semibold text-white sm:text-3xl">KiranaBrain • Kirana store assistant</h1>
+          </div>
+          <div class="flex items-center gap-2 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-200">
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+            Store live status
+          </div>
+        </header>
+
+        <section id="dashboard-section" class="mt-6 space-y-6"></section>
+        <section id="inventory-section" class="mt-6 hidden"></section>
+        <section id="ai-section" class="mt-6 hidden"></section>
+        <section id="order-section" class="mt-6 hidden"></section>
+        <section id="orders-section" class="mt-6 hidden"></section>
+      </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+  </body>
+</html>
